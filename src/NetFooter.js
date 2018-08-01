@@ -14,20 +14,18 @@ function getStatusText() {
 export class NetFooter extends Component {
 	render() {
 		return (
-			<Container>
-				<Footer>
-					<FooterTab>
-						<Container>
-							<Icon name="navigate" />
-							<Text>7301 Kit Creek Rd, Durham, NC 27709</Text>
-						</Container>
-						<Container>
-							<Icon name="alarm" />
-							<Text>Currently {getStatusText()}</Text>
-						</Container>
-					</FooterTab>
-				</Footer>
-			</Container>
+			<Footer style={{ justifyContent: 'flex-end' }}>
+				<FooterTab>
+					<Container>
+						<Icon name="navigate" />
+						<Text>7301 Kit Creek Rd</Text>
+					</Container>
+					<Container>
+						<Icon name="alarm" />
+						<Text>Currently {getStatusText()}</Text>
+					</Container>
+				</FooterTab>
+			</Footer>
 		);
 	}
 }

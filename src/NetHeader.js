@@ -16,21 +16,19 @@ export class NetHeader extends Component {
 			'https://facebook.github.io/react-native/docs/assets/favicon.png';
 
 		return (
-			<Container>
-				<Header>
-					<Left>
-						<Button transparent>
-							<Icon name="menu" />
-						</Button>
-					</Left>
+			<Header style={{ justifyContent: 'flex-start' }}>
+				<Left>
+					<Button transparent>
+						<Icon name="menu" />
+					</Button>
+				</Left>
 
-					<Body>
-						<Title>NetWork</Title>
-					</Body>
+				<Body>
+					<Title>NetWork</Title>
+				</Body>
 
-					<Right />
-				</Header>
-			</Container>
+				<Right />
+			</Header>
 		);
 	}
 }
