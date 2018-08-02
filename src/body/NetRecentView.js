@@ -17,7 +17,6 @@ export class NetRecentView extends Component {
 					pagingEnabled={true}
 					horizontal={true}
 					decelerationRate={0}
-					contentContainerStyle={styles.scrollStyle}
 				>
 					{data.map(user => <NetProfile user={user} key={user.username} />)}
 				</ScrollView>
@@ -25,12 +24,3 @@ export class NetRecentView extends Component {
 		);
 	}
 }
-
-const styles = {
-	scrollStyle: {
-		flex: 1,
-		flexDirection: 'row',
-		justifyContent: 'space-between',
-		margin: 10
-	}
-};

@@ -30,5 +30,15 @@ export default [
 		office: 'RTP3.2.361',
 		type: 'Employee',
 		avatar: richard
+	},
+	{
+		name: 'Natasha Wong',
+		username: 'wnatasha1',
+		title: 'Software Developer',
+		email: 'wnatasha@netapp.com',
+		linkedIn: 'natashaylwong',
+		office: 'RTP3.2.361',
+		type: 'Employee',
+		avatar: natasha
 	}
 ];

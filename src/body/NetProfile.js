@@ -12,10 +12,10 @@ export class NetProfile extends Component {
 			isVisible: false
 		};
 
-		this.toggleModal = this.toggleModal.bind(this);
+		this._toggleModal = this._toggleModal.bind(this);
 	}
 
-	toggleModal() {
+	_toggleModal() {
 		this.setState({ isVisible: !this.state.isVisible });
 	}
 
@@ -24,24 +24,17 @@ export class NetProfile extends Component {
 		const { isVisible } = this.state;
 
 		return (
-			<View>
-				<TouchableOpacity onPress={this.toggleModal}>
+			<View style={styles.viewStyle}>
+				<TouchableOpacity onPress={this._toggleModal}>
 					<Thumbnail large source={user.avatar} />
 				</TouchableOpacity>
 
 				<Modal isVisible={isVisible}>
-					<View style={styles.popUp}>
+					<View style={styles.modalStyle}>
 						<Text style={styles.titleText}>{user.title}</Text>
-						<TouchableOpacity onPress={this.toggleModal}>
+						<TouchableOpacity onPress={this._toggleModal}>
 							<View style={styles.picture}>
-								<Thumbnail
-									style={{
-										alignItems: 'center',
-										justifyContent: 'center'
-									}}
-									square
-									source={user.avatar}
-								/>
+								<Thumbnail style={styles.information} source={user.avatar} />
 							</View>
 							<Container style={styles.information}>
 								<Text style={styles.name}>{user.name}</Text>
@@ -59,6 +52,25 @@ export class NetProfile extends Component {
 }
 
 const styles = {
+	viewStyle: {
+		margin: 10
+	},
+	modalStyle: {
+		alignItems: 'center',
+		backgroundColor: '#0067C5',
+		height: 550,
+		marginTop: 50,
+		marginBottom: 50,
+		opacity: 0.8,
+		borderRadius: 10
+	},
+	titleText: {
+		alignItems: 'center',
+		color: 'white',
+		fontWeight: 'bold',
+		marginTop: 50,
+		fontSize: 25
+	},
 	information: {
 		alignItems: 'center',
 		justifyContent: 'center'
@@ -66,14 +78,6 @@ const styles = {
 	tinyInfo: {
 		alignItems: 'center',
 		color: 'white'
-	},
-	titleText: {
-		alignItems: 'center',
-		justifyContent: 'center',
-		color: 'white',
-		fontWeight: 'bold',
-		marginTop: 50,
-		fontSize: 25
 	},
 	picture: {
 		alignItems: 'center',
@@ -85,15 +89,6 @@ const styles = {
 		height: 100,
 		borderRadius: 50,
 		alignItems: 'center'
-	},
-	popUp: {
-		alignItems: 'center',
-		backgroundColor: '#0067C5',
-		height: 550,
-		marginTop: 50,
-		marginBottom: 50,
-		opacity: 0.8,
-		borderRadius: 10
 	},
 	name: {
 		alignItems: 'center',
