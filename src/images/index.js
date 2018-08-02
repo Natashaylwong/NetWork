@@ -1,3 +1,6 @@
-import netapp_logo from './netapp_logo.png';
+import netapp from './netapp.png';
+import bobby from './bobby.png';
+import natasha from './natasha.png';
+import richard from './richard.png';
 
-export { netapp_logo };
+export { netapp, bobby, natasha, richard };

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Thumbnail } from 'native-base';
-import { netapp_logo } from '../images/';
+import { netapp } from '../images/';
 import {
 	Text,
 	TouchableOpacity,
@@ -37,7 +37,7 @@ export class NetProfile extends Component {
 										justifyContent: 'center'
 									}}
 									square
-									source={netapp_logo}
+									source={netapp}
 								/>
 							</View>
 							<Text style={styles.name}>Natasha Wong</Text>
