@@ -1,38 +1,25 @@
 import React, { Component } from 'react';
 import { View, ScrollView } from 'react-native';
 import { Container, Thumbnail } from 'native-base';
-import { NetAvatarList } from './NetAvatarList';
-import { bobby, natasha, richard } from '../images/';
+import { NetProfile } from './NetProfile';
+import data from '../../util/fake';
 
 export class NetRecentView extends Component {
 	componentDidMount() {
-		setTimeout(() => this.scrollView.scrollTo({ x: -15 }), 1);
+		setTimeout(() => this.scrollView.scrollTo({ x: 0 }), 1);
 	}
 
 	render() {
 		return (
 			<Container style={{ height: 100 }}>
 				<ScrollView
-					ref={scrollView => {
-						this.scrollView = scrollView;
-					}}
+					ref={scrollView => (this.scrollView = scrollView)}
 					pagingEnabled={true}
 					horizontal={true}
 					decelerationRate={0}
-					contentInset={{
-						left: 10,
-						right: 10
-					}}
+					contentContainerStyle={styles.scrollStyle}
 				>
-					<View style={styles.viewStyle}>
-						<Thumbnail large source={bobby} />
-					</View>
-					<View style={styles.viewStyle}>
-						<Thumbnail large source={natasha} />
-					</View>
-					<View style={styles.viewStyle}>
-						<Thumbnail large source={richard} />
-					</View>
+					{data.map(user => <NetProfile user={user} key={user.username} />)}
 				</ScrollView>
 			</Container>
 		);
@@ -40,7 +27,10 @@ export class NetRecentView extends Component {
 }
 
 const styles = {
-	viewStyle: {
+	scrollStyle: {
+		flex: 1,
+		flexDirection: 'row',
+		justifyContent: 'space-between',
 		margin: 10
 	}
 };

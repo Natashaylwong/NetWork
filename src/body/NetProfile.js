@@ -1,35 +1,38 @@
 import React, { Component } from 'react';
+import { View, Text, TouchableOpacity } from 'react-native';
 import { Container, Thumbnail } from 'native-base';
-import { netapp } from '../images/';
-import {
-	Text,
-	TouchableOpacity,
-	View,
-	StyleSheet,
-	Dimensions
-} from 'react-native';
 import Modal from 'react-native-modal';
-
-const { width, height } = Dimensions.get('window');
+import { netapp } from '../images/';
 
 export class NetProfile extends Component {
-	state = {
-		isModalVisible: false
-	};
+	constructor(props) {
+		super(props);
 
-	_toggleModal = () =>
-		this.setState({ isModalVisible: !this.state.isModalVisible });
+		this.state = {
+			isVisible: false
+		};
+
+		this.toggleModal = this.toggleModal.bind(this);
+	}
+
+	toggleModal() {
+		this.setState({ isVisible: !this.state.isVisible });
+	}
 
 	render() {
+		const { user } = this.props;
+		const { isVisible } = this.state;
+
 		return (
-			<View style={styles.container}>
-				<TouchableOpacity onPress={this._toggleModal}>
-					<Text>Show Modal</Text>
+			<View>
+				<TouchableOpacity onPress={this.toggleModal}>
+					<Thumbnail large source={user.avatar} />
 				</TouchableOpacity>
-				<Modal isVisible={this.state.isModalVisible}>
+
+				<Modal isVisible={isVisible}>
 					<View style={styles.popUp}>
-						<Text style={styles.titleText}>Software Developer</Text>
-						<TouchableOpacity onPress={this._toggleModal}>
+						<Text style={styles.titleText}>{user.title}</Text>
+						<TouchableOpacity onPress={this.toggleModal}>
 							<View style={styles.picture}>
 								<Thumbnail
 									style={{
@@ -37,15 +40,15 @@ export class NetProfile extends Component {
 										justifyContent: 'center'
 									}}
 									square
-									source={netapp}
+									source={user.avatar}
 								/>
 							</View>
 							<Container style={styles.information}>
-								<Text style={styles.name}>Natasha Wong</Text>
-								<Text style={styles.type}>Employee</Text>
-								<Text style={styles.tinyInfo}>Email: wnatasha@netapp.com</Text>
-								<Text style={styles.tinyInfo}>LinkedIn: natashaylwong</Text>
-								<Text style={styles.tinyInfo}>Office: RTP3.2.361</Text>
+								<Text style={styles.name}>{user.name}</Text>
+								<Text style={styles.type}>{user.type}</Text>
+								<Text style={styles.tinyInfo}>Email: {user.email}</Text>
+								<Text style={styles.tinyInfo}>LinkedIn: {user.linkedIn}</Text>
+								<Text style={styles.tinyInfo}>Office: {user.office}</Text>
 							</Container>
 						</TouchableOpacity>
 					</View>
@@ -55,7 +58,7 @@ export class NetProfile extends Component {
 	}
 }
 
-const styles = StyleSheet.create({
+const styles = {
 	information: {
 		alignItems: 'center',
 		justifyContent: 'center'
@@ -63,11 +66,6 @@ const styles = StyleSheet.create({
 	tinyInfo: {
 		alignItems: 'center',
 		color: 'white'
-	},
-	container: {
-		alignItems: 'center',
-		backgroundColor: '#0067C5',
-		padding: 100
 	},
 	titleText: {
 		alignItems: 'center',
@@ -86,8 +84,6 @@ const styles = StyleSheet.create({
 		marginBottom: 20,
 		height: 100,
 		borderRadius: 50,
-		// width: 90,
-		// height: 90,
 		alignItems: 'center'
 	},
 	popUp: {
@@ -115,4 +111,4 @@ const styles = StyleSheet.create({
 		marginTop: 5,
 		fontSize: 20
 	}
-});
+};
