@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Thumbnail } from 'native-base';
-import avatar from '../images/netapp_logo.png';
+import { netapp_logo } from '../images/';
 import {
 	Text,
 	TouchableOpacity,
@@ -10,8 +10,7 @@ import {
 } from 'react-native';
 import Modal from 'react-native-modal';
 
-const { width } = Dimensions.get('window').width;
-const { height } = Dimensions.get('window').height;
+const { width, height } = Dimensions.get('window');
 
 export class NetProfile extends Component {
 	state = {
@@ -38,7 +37,7 @@ export class NetProfile extends Component {
 										justifyContent: 'center'
 									}}
 									square
-									source={avatar}
+									source={netapp_logo}
 								/>
 							</View>
 							<Text style={styles.name}>Natasha Wong</Text>
