@@ -69,7 +69,7 @@ const styles = {
 		color: 'white',
 		fontWeight: 'bold',
 		marginTop: 50,
-		fontSize: 25
+		fontSize: 30
 	},
 	information: {
 		alignItems: 'center',
@@ -77,17 +77,16 @@ const styles = {
 	},
 	tinyInfo: {
 		alignItems: 'center',
-		color: 'white'
+		color: 'white',
+		fontSize: 15
 	},
 	picture: {
 		alignItems: 'center',
 		backgroundColor: 'white',
-		width: 100,
-		margin: 40,
-		marginTop: 50,
-		marginBottom: 20,
-		height: 100,
-		borderRadius: 50,
+		marginTop: 45,
+		width: 140,
+		height: 140,
+		borderRadius: 70,
 		alignItems: 'center'
 	},
 	name: {
@@ -95,7 +94,7 @@ const styles = {
 		justifyContent: 'center',
 		color: 'black',
 		fontWeight: '500',
-		fontSize: 25,
+		fontSize: 30,
 		marginTop: 20,
 		marginBottom: 20
 	},
@@ -103,7 +102,6 @@ const styles = {
 		alignItems: 'center',
 		color: 'white',
 		fontWeight: '500',
-		marginTop: 5,
 		fontSize: 20
 	}
 };

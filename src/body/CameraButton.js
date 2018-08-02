@@ -8,7 +8,7 @@ export class CameraButton extends Component {
 			<Container style={styles.container}>
 				<Content>
 					<Button style={styles.button}>
-						<Text>Click Me!</Text>
+						<Text>Scan QR Code - Identifier</Text>
 					</Button>
 				</Content>
 			</Container>
