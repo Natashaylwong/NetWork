@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { Container, Content } from 'native-base';
-import { AvatarList } from './body/AvatarList';
+import { RecentlyView } from './body/RecentlyView';
+import { NetProfile } from './body/NetProfile';
 
 export class NetBody extends Component {
 	render() {
 		return (
 			<Content>
-				<AvatarList />
+				<RecentlyView />
+				<NetProfile />
 			</Content>
 		);
 	}
