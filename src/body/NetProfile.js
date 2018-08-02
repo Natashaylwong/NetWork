@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Thumbnail } from 'native-base';
+import { Container, Thumbnail } from 'native-base';
 import { netapp } from '../images/';
 import {
 	Text,
