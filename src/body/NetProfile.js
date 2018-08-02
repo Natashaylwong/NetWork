@@ -27,9 +27,9 @@ export class NetProfile extends Component {
 					<Text>Show Modal</Text>
 				</TouchableOpacity>
 				<Modal isVisible={this.state.isModalVisible}>
-					<View style={styles.popUp}>
-						<Text style={styles.titleText}>Software Developer</Text>
-						<TouchableOpacity onPress={this._toggleModal}>
+					<TouchableOpacity onPress={this._toggleModal}>
+						<View style={styles.popUp}>
+							<Text style={styles.titleText}>Software Developer</Text>
 							<View style={styles.picture}>
 								<Thumbnail
 									style={{
@@ -47,8 +47,8 @@ export class NetProfile extends Component {
 								<Text style={styles.tinyInfo}>LinkedIn: natashaylwong</Text>
 								<Text style={styles.tinyInfo}>Office: RTP3.2.361</Text>
 							</Container>
-						</TouchableOpacity>
-					</View>
+						</View>
+					</TouchableOpacity>
 				</Modal>
 			</View>
 		);
