@@ -6,13 +6,18 @@ import netapp_logo from '../images/';
 export class AvatarList extends Component {
 	render() {
 		return (
-			<List>
-				<ListItem thumbnail>
-					<Thumbnail source={netapp_logo} />
-					<Thumbnail source={netapp_logo} />
-					<Thumbnail source={netapp_logo} />
-				</ListItem>
-			</List>
+			<ScrollView>
+				<Row>
+					<List>
+						<ListItem thumbnail>
+							<Thumbnail square source={uri} />
+						</ListItem>
+						<ListItem>
+							<Thumbnail square source={uri} />
+						</ListItem>
+					</List>
+				</Row>
+			</ScrollView>
 		);
 	}
 }

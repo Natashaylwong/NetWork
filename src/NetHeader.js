@@ -1,14 +1,5 @@
 import React, { Component } from 'react';
-import {
-	Container,
-	Header,
-	Title,
-	Button,
-	Icon,
-	Left,
-	Right,
-	Body
-} from 'native-base';
+import { Header, Title, Button, Icon, Left, Right, Body } from 'native-base';
 
 export class NetHeader extends Component {
 	render() {
