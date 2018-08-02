@@ -27,9 +27,9 @@ export class NetProfile extends Component {
 					<Text>Show Modal</Text>
 				</TouchableOpacity>
 				<Modal isVisible={this.state.isModalVisible}>
-					<View style={styles.popUp}>
-						<Text style={styles.titleText}>Software Developer</Text>
-						<TouchableOpacity onPress={this._toggleModal}>
+					<TouchableOpacity onPress={this._toggleModal}>
+						<View style={styles.popUp}>
+							<Text style={styles.titleText}>Software Developer</Text>
 							<View style={styles.picture}>
 								<Thumbnail
 									style={{
@@ -47,8 +47,8 @@ export class NetProfile extends Component {
 								<Text style={styles.tinyInfo}>LinkedIn: natashaylwong</Text>
 								<Text style={styles.tinyInfo}>Office: RTP3.2.361</Text>
 							</Container>
-						</TouchableOpacity>
-					</View>
+						</View>
+					</TouchableOpacity>
 				</Modal>
 			</View>
 		);
@@ -62,7 +62,8 @@ const styles = StyleSheet.create({
 	},
 	tinyInfo: {
 		alignItems: 'center',
-		color: 'white'
+		color: 'white',
+		fontSize: 15
 	},
 	container: {
 		alignItems: 'center',
@@ -75,17 +76,15 @@ const styles = StyleSheet.create({
 		color: 'white',
 		fontWeight: 'bold',
 		marginTop: 50,
-		fontSize: 25
+		fontSize: 30
 	},
 	picture: {
 		alignItems: 'center',
 		backgroundColor: 'white',
-		width: 100,
-		margin: 40,
-		marginTop: 50,
-		marginBottom: 20,
-		height: 100,
-		borderRadius: 50,
+		marginTop: 45,
+		width: 140,
+		height: 140,
+		borderRadius: 70,
 		// width: 90,
 		// height: 90,
 		alignItems: 'center'
@@ -94,8 +93,6 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		backgroundColor: '#0067C5',
 		height: 550,
-		marginTop: 50,
-		marginBottom: 50,
 		opacity: 0.8,
 		borderRadius: 10
 	},
@@ -104,15 +101,12 @@ const styles = StyleSheet.create({
 		justifyContent: 'center',
 		color: 'black',
 		fontWeight: '500',
-		fontSize: 25,
-		marginTop: 20,
-		marginBottom: 20
+		fontSize: 30
 	},
 	type: {
 		alignItems: 'center',
 		color: 'white',
 		fontWeight: '500',
-		marginTop: 5,
 		fontSize: 20
 	}
 });
