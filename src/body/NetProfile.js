@@ -40,8 +40,13 @@ export class NetProfile extends Component {
 									source={netapp}
 								/>
 							</View>
-							<Text style={styles.name}>Natasha Wong</Text>
-							<Text style={styles.type}>Employee</Text>
+							<Container style={styles.information}>
+								<Text style={styles.name}>Natasha Wong</Text>
+								<Text style={styles.type}>Employee</Text>
+								<Text style={styles.tinyInfo}>Email: wnatasha@netapp.com</Text>
+								<Text style={styles.tinyInfo}>LinkedIn: natashaylwong</Text>
+								<Text style={styles.tinyInfo}>Office: RTP3.2.361</Text>
+							</Container>
 						</TouchableOpacity>
 					</View>
 				</Modal>
@@ -51,6 +56,14 @@ export class NetProfile extends Component {
 }
 
 const styles = StyleSheet.create({
+	information: {
+		alignItems: 'center',
+		justifyContent: 'center'
+	},
+	tinyInfo: {
+		alignItems: 'center',
+		color: 'white'
+	},
 	container: {
 		alignItems: 'center',
 		backgroundColor: '#0067C5',
@@ -100,7 +113,6 @@ const styles = StyleSheet.create({
 		color: 'white',
 		fontWeight: '500',
 		marginTop: 5,
-		marginBottom: 5,
 		fontSize: 20
 	}
 });
