@@ -7,7 +7,7 @@ import { natasha, bobby, richard } from '../images/';
 export class NetNewsList extends Component {
 	render() {
 		return (
-			<Container style={{ height: 385 }}>
+			<Container style={{ height: 450 }}>
 				<ScrollView
 					ref={scrollView => (this.scrollView = scrollView)}
 					pagingEnabled={true}

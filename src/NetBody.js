@@ -10,7 +10,6 @@ export class NetBody extends Component {
 			<Content>
 				<NetRecentView />
 				<NetNewsList />
-				<CameraButton />
 			</Content>
 		);
 	}

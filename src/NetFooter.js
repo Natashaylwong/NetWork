@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
-import { Container, Footer, FooterTab, Text, Icon } from 'native-base';
-
-function getStatusText() {
-	const now = new Date();
-	const day = now.getDay();
-	const hour = now.getHours();
-	if (day == 0 || day == 6 || hour < 8 || hour >= 17) {
-		return 'Closed';
-	}
-	return 'Open';
-}
+import {
+	Container,
+	Footer,
+	FooterTab,
+	Text,
+	Icon,
+	Left,
+	Right,
+	Content,
+	Button
+} from 'native-base';
+import { StyleSheet, View } from 'react-native';
 
 export class NetFooter extends Component {
 	render() {
@@ -17,15 +18,19 @@ export class NetFooter extends Component {
 			<Footer style={{ justifyContent: 'flex-end' }}>
 				<FooterTab>
 					<Container>
-						<Icon name="navigate" />
-						<Text>7301 Kit Creek Rd</Text>
-					</Container>
-					<Container>
-						<Icon name="alarm" />
-						<Text>Currently {getStatusText()}</Text>
+						<Button full style={styles.button}>
+							<Text style={{ color: 'white' }}>Scan QR Code - Identifier</Text>
+						</Button>
 					</Container>
 				</FooterTab>
 			</Footer>
 		);
 	}
 }
+const styles = {
+	button: {
+		backgroundColor: '#0067C5',
+		color: 'white',
+		margin: 10
+	}
+};
