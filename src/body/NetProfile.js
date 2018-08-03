@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import { Container, Thumbnail } from 'native-base';
+import { Thumbnail } from 'native-base';
 import Modal from 'react-native-modal';
-import { netapp } from '../images/';
 
 export class NetProfile extends Component {
 	constructor(props) {
@@ -26,23 +25,25 @@ export class NetProfile extends Component {
 		return (
 			<View style={styles.viewStyle}>
 				<TouchableOpacity onPress={this._toggleModal}>
-					<Thumbnail large source={user.avatar} />
+					<Thumbnail medium source={user.avatar} />
 				</TouchableOpacity>
 
 				<Modal isVisible={isVisible}>
 					<View style={styles.modalStyle}>
-						<Text style={styles.titleText}>{user.title}</Text>
 						<TouchableOpacity onPress={this._toggleModal}>
-							<View style={styles.picture}>
-								<Thumbnail style={styles.information} source={user.avatar} />
+							<Text style={styles.titleStyle}>{user.title}</Text>
+
+							<View style={styles.viewStyle}>
+								<Thumbnail style={styles.picStyle} source={user.avatar} />
 							</View>
-							<Container style={styles.information}>
-								<Text style={styles.name}>{user.name}</Text>
-								<Text style={styles.type}>{user.type}</Text>
-								<Text style={styles.tinyInfo}>Email: {user.email}</Text>
-								<Text style={styles.tinyInfo}>LinkedIn: {user.linkedIn}</Text>
-								<Text style={styles.tinyInfo}>Office: {user.office}</Text>
-							</Container>
+
+							<View style={styles.viewStyle}>
+								<Text style={styles.nameStyle}>{user.name}</Text>
+								<Text style={styles.typeStyle}>{user.type}</Text>
+								<Text style={styles.infoStyle}>Email: {user.email}</Text>
+								<Text style={styles.infoStyle}>LinkedIn: {user.linkedIn}</Text>
+								<Text style={styles.infoStyle}>Office: {user.office}</Text>
+							</View>
 						</TouchableOpacity>
 					</View>
 				</Modal>
@@ -53,55 +54,46 @@ export class NetProfile extends Component {
 
 const styles = {
 	viewStyle: {
-		margin: 10
+		margin: 10,
+		alignItems: 'center',
+		justifyContent: 'center',
+		color: '#D9D9D6'
 	},
 	modalStyle: {
 		alignItems: 'center',
 		backgroundColor: '#0067C5',
-		height: 550,
-		marginTop: 50,
-		marginBottom: 50,
+		height: 500,
 		opacity: 0.8,
-		borderRadius: 10
+		borderRadius: 15
 	},
-	titleText: {
+	titleStyle: {
 		alignItems: 'center',
-		color: 'white',
-		fontWeight: 'bold',
+		color: '#D9D9D6',
+		fontWeight: '700',
 		marginTop: 50,
 		fontSize: 30
 	},
-	information: {
-		alignItems: 'center',
-		justifyContent: 'center'
+	picStyle: {
+		marginTop: 30,
+		width: 100,
+		height: 100
 	},
-	tinyInfo: {
-		alignItems: 'center',
-		color: 'white',
-		fontSize: 15
-	},
-	picture: {
-		alignItems: 'center',
-		backgroundColor: 'white',
-		marginTop: 45,
-		width: 140,
-		height: 140,
-		borderRadius: 70,
-		alignItems: 'center'
-	},
-	name: {
-		alignItems: 'center',
-		justifyContent: 'center',
-		color: 'black',
+	nameStyle: {
+		color: '#D9D9D6',
 		fontWeight: '500',
 		fontSize: 30,
 		marginTop: 20,
 		marginBottom: 20
 	},
-	type: {
-		alignItems: 'center',
-		color: 'white',
+	typeStyle: {
+		color: '#D9D9D6',
 		fontWeight: '500',
-		fontSize: 20
+		fontSize: 22
+	},
+	infoStyle: {
+		color: '#D9D9D6',
+		fontSize: 18,
+		marginTop: 2,
+		marginBottom: 2
 	}
 };

@@ -11,7 +11,7 @@ export class NetRecentView extends Component {
 
 	render() {
 		return (
-			<Container style={{ height: 100 }}>
+			<Container style={{ height: 70 }}>
 				<ScrollView
 					ref={scrollView => (this.scrollView = scrollView)}
 					pagingEnabled={true}

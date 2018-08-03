@@ -1,30 +1,20 @@
 import React, { Component } from 'react';
-import { Container, Content, Button, Text } from 'native-base';
-import { View, StyleSheet } from 'react-native';
+import { Button, Text } from 'native-base';
 
 export class CameraButton extends Component {
 	render() {
 		return (
-			<Container style={styles.container}>
-				<Content>
-					<Button style={styles.button}>
-						<Text>Scan QR Code - Identifier</Text>
-					</Button>
-				</Content>
-			</Container>
+			<Button full style={styles.button}>
+				<Text>Scan QR Code - Identifier</Text>
+			</Button>
 		);
 	}
 }
 
-const styles = StyleSheet.create({
-	container: {
-		alignItems: 'center'
-	},
+const styles = {
 	button: {
-		alignItems: 'center',
-		justifyContent: 'center',
 		backgroundColor: '#0067C5',
 		color: 'white',
-		marginTop: 50
+		margin: 10
 	}
-});
+};
